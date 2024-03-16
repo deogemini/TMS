@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\VehicleType;
 use Illuminate\Http\Request;
 
 class TruckController extends Controller
@@ -11,15 +12,23 @@ class TruckController extends Controller
      */
     public function index()
     {
-       return view('pages.truckspage');
+
+        $cars = VehicleType::all();
+       return view('pages.vehicleType', compact('cars'));
     }
 
     /**
      * Show the form for creating a new resource.
      */
-    public function create()
+    public function createVehicleType(Request $request)
     {
-        //
+        $request->validate([
+            'name'=>'required|string'
+        ]);
+
+        VehicleType::create($request->all());
+
+        return redirect()->back();
     }
 
     /**

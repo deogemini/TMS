@@ -30,10 +30,10 @@
       <div class="collapse" id="vehicle-pages">
         <ul class="nav flex-column sub-menu">
           <li class="nav-item">
-            <a class="nav-link">
+            <a class="nav-link {{ request()->routeIs('trucks.index') ? 'active' : '' }}" href="{{ route('trucks.index')}}">
                 <span class="menu-title">Vehicle Types</span></a>
         </li>
-          <li class="nav-item"> <a class="nav-link" href="pages/samples/login.html"> Add Vehicles </a></li>
+          <li class="nav-item"> <a class="nav-link {{ request()->routeIs('trucks.index') ? 'active' : '' }}" href="{{ route('trucks.index')}}"> <span class="menu-title"> Add Vehicles</span>  </a></li>
           <li class="nav-item"> <a class="nav-link" href="pages/samples/register.html"> Assign Driver Vehicle </a></li>
           <li class="nav-item"> <a class="nav-link" href="pages/samples/error-404.html"> 400</a></li>
           <li class="nav-item"> <a class="nav-link" href="pages/samples/error-500.html"> 500 </a></li>
