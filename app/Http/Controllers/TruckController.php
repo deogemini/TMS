@@ -17,6 +17,13 @@ class TruckController extends Controller
        return view('pages.vehicleType', compact('cars'));
     }
 
+    public function indexVehicles()
+    {
+
+        $cars = VehicleType::all();
+       return view('pages.truckspage', compact('cars'));
+    }
+
     /**
      * Show the form for creating a new resource.
      */

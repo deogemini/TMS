@@ -20,5 +20,6 @@ Route::get('/', function () {
 });
 
 Route::get('/trucks/index',[TruckController::class, 'index'])->name('trucks.index');
+Route::get('/trucks/vehicles/index',[TruckController::class, 'indexVehicles'])->name('trucks.vehicles.index');
 Route::post('/trucks/create',[TruckController::class, 'createVehicleType'])->name('trucks.create');
 Route::get('/dashboard/index',[DashboardController::class, 'index'])->name('dashboard.index');

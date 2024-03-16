@@ -33,7 +33,8 @@
             <a class="nav-link {{ request()->routeIs('trucks.index') ? 'active' : '' }}" href="{{ route('trucks.index')}}">
                 <span class="menu-title">Vehicle Types</span></a>
         </li>
-          <li class="nav-item"> <a class="nav-link {{ request()->routeIs('trucks.index') ? 'active' : '' }}" href="{{ route('trucks.index')}}"> <span class="menu-title"> Add Vehicles</span>  </a></li>
+          <li class="nav-item"> <a class="nav-link {{ request()->routeIs('trucks.vehicles.index') ? 'active' : '' }}" href="{{ route('trucks.vehicles.index')}}"> <span class="menu-title"> Register Vehicles</span>  </a></li>
+          <li class="nav-item"> <a class="nav-link" href="pages/samples/register.html"> Vehicle Advance Details</a></li>
           <li class="nav-item"> <a class="nav-link" href="pages/samples/register.html"> Assign Driver Vehicle </a></li>
           <li class="nav-item"> <a class="nav-link" href="pages/samples/error-404.html"> 400</a></li>
           <li class="nav-item"> <a class="nav-link" href="pages/samples/error-500.html"> 500 </a></li>
@@ -60,14 +61,14 @@
     </li>
     <li class="nav-item">
       <a class="nav-link" data-bs-toggle="collapse" href="#general-pages" aria-expanded="false" aria-controls="general-pages">
-        <span class="menu-title">Reports</span>
+        <span class="menu-title">Manage Trip</span>
         <i class="menu-arrow"></i>
         <i class="mdi mdi-medical-bag menu-icon"></i>
       </a>
       <div class="collapse" id="general-pages">
         <ul class="nav flex-column sub-menu">
-          <li class="nav-item"> <a class="nav-link" href="pages/samples/blank-page.html"> Blank Page </a></li>
-          <li class="nav-item"> <a class="nav-link" href="pages/samples/login.html"> Login </a></li>
+          <li class="nav-item"> <a class="nav-link" href="pages/samples/blank-page.html"> Trip Entry </a></li>
+          <li class="nav-item"> <a class="nav-link" href="pages/samples/login.html"> All Trip</a></li>
           <li class="nav-item"> <a class="nav-link" href="pages/samples/register.html"> Register </a></li>
           <li class="nav-item"> <a class="nav-link" href="pages/samples/error-404.html"> 404 </a></li>
           <li class="nav-item"> <a class="nav-link" href="pages/samples/error-500.html"> 500 </a></li>

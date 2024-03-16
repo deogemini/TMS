@@ -23,16 +23,11 @@
           <thead>
             <tr>
               <th>SN</th>
-              <th> Type Name </th>
-              <th> Make/Model</th>
-              <th> Registration Number</th>
-              <th> Engine Number</th>
-              <th> Chasis number</th>
-              <th> Year of Manufacture</th>
-              <th> Fuel Type</th>
-              <th> Vehicle Image</th>
-              <th> Kilometers</th>
-              <th> Status</th>
+              <th>Vehicle Name</th>
+              <th>Insurance Number</th>
+              <th>Insurance Start Date</th>
+              <th>Insurance Expire Date</th>
+              <th>Latra Number</th>
               <th>Actions</th>
             </tr>
           </thead>
