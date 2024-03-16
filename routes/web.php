@@ -1,5 +1,7 @@
 <?php
 
+use App\Http\Controllers\DashboardController;
+use App\Http\Controllers\TruckController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -16,3 +18,6 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('welcome');
 });
+
+Route::get('/trucks/index',[TruckController::class, 'index'])->name('trucks.index');
+Route::get('/dashboard/index',[DashboardController::class, 'index'])->name('dashboard.index');
