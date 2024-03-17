@@ -38,6 +38,19 @@ class TruckController extends Controller
         return redirect()->back();
     }
 
+    public function storeFile(Request $request){
+        if($request->hasFile('avatar')){
+            $file = $request->file('avatar');
+            $filename = $file->getClientOriginalName();
+            $folder = uniqid().'-'.now()->timestamp;
+            $file->storeAs('avatars/'.$folder,$filename);
+
+            return $folder;
+        }
+
+        return '';
+    }
+
     /**
      * Store a newly created resource in storage.
      */

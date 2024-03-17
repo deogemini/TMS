@@ -11,6 +11,9 @@
     <link rel="stylesheet" href="{{ asset('assets/css/style.css')}}">
     <!-- End layout styles -->
     <link rel="shortcut icon" href=" {{ asset('assets/images/favicon.ico')}}" />
+
+    <link href="https://unpkg.com/filepond@^4/dist/filepond.css" rel="stylesheet" />
+
   </head>
   <body>
     <div class="container-scroller">
@@ -79,6 +82,28 @@
     <!-- Custom js for this page -->
     <script src="{{ asset('assets/js/dashboard.js')}}"></script>
     <script src="{{ asset('assets/js/todolist.js')}}"></script>
+    <script src="https://unpkg.com/filepond@^4/dist/filepond.js"></script>
+
+
+    {{-- @yield('scripts') --}}
+
+    <script>
+        // Get a reference to the file input element
+  const inputElement = document.querySelector('input[id="avatar"]');
+
+  // Create a FilePond instance
+  const pond = FilePond.create(inputElement);
+
+  FilePond.setOptions({
+      server:'/trucks/upload'
+
+  });
+
+
+  </script>
+
+
+
     <!-- End custom js for this page -->
   </body>
 </html>
