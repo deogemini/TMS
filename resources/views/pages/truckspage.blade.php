@@ -24,7 +24,8 @@
           <thead>
             <tr>
               <th>SN</th>
-              <th> Type Name </th>
+              <th> Vehicle Name </th>
+              <th> Vehicle Type </th>
               <th> Make/Model</th>
               <th> Registration Number</th>
               <th> Engine Number</th>
@@ -41,17 +42,25 @@
             @foreach ($cars as $car )
             <tr>
                 <td>{{$car->id}}</td>
-                <td>{{$car->name}}</td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
+                <td>{{$car->vehicle_name}}</td>
+                <td>{{ $car_types->where('id',$car->type_id)->pluck('name')->first() }}</td>
+                <td>{{$car->make_model}}</td>
+                <td>{{$car->registration_number}}</td>
+                <td>{{$car->engine_number}}</td>
+                <td>{{$car->chasis_number}}</td>
+                <td>{{$car->year_manufacture}}</td>
+                <td>{{$car->fuel_type}}</td>
+                <td>''</td>
+                <td>{{$car->kilometres}}</td>
+                <td>{{$car->status}}</td>
+                <td>
+                    <!-- Add button with tooltip -->
+                    <span class="mdi mdi-plus-box" title="Add advance details"></span>
+
+                    <!-- Update button with tooltip -->
+                    <span class="mdi mdi-pencil" title="Update vehicle details"></span>
+                </td>
+
             </tr>
 
             @endforeach

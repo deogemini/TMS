@@ -21,9 +21,8 @@ return new class extends Migration
             $table->string('chasis_number');
             $table->integer('year_manufacture');
             $table->string('fuel_type');
-            $table->string('vehicle_image');
             $table->integer('kilometres');
-            $table->string('status');
+            $table->string('status')->default('active');
             $table->timestamps();
 
             $table->foreign('type_id')->references('id')->on('vehicle_types');

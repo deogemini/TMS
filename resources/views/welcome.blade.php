@@ -9,10 +9,17 @@
     <link rel="stylesheet" href="{{ asset('assets/vendors/mdi/css/materialdesignicons.min.css')}}">
     <link rel="stylesheet" href="{{ asset('assets/vendors/css/vendor.bundle.base.css')}}">
     <link rel="stylesheet" href="{{ asset('assets/css/style.css')}}">
+    <link rel="stylesheet" href="{{ asset('assets/css/style2.css')}}">
     <!-- End layout styles -->
     <link rel="shortcut icon" href=" {{ asset('assets/images/favicon.ico')}}" />
 
+    <meta name="csrf-token" content="{{ csrf_token() }}">
+
+
     <link href="https://unpkg.com/filepond@^4/dist/filepond.css" rel="stylesheet" />
+
+
+
 
   </head>
   <body>
@@ -88,22 +95,33 @@
     {{-- @yield('scripts') --}}
 
     <script>
-        // Get a reference to the file input element
-  const inputElement = document.querySelector('input[id="avatar"]');
+       // Initialize FilePond with custom options
 
-  // Create a FilePond instance
-  const pond = FilePond.create(inputElement);
+       const inputElement = document.querySelector('input[id="avatar"]');
 
-  FilePond.setOptions({
-      server:'/trucks/upload'
+            const pond = FilePond.create(inputElement, {
+                server: {
+                    url: '/trucks/upload',
+                    process: {
+                        headers: {
+                            'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+                        }
+                    }
+                },
+                // Additional options can be added here
+            });
 
-  });
+            // Optionally, you can listen for events and perform actions
+            pond.on('addfile', (error, file) => {
+                if (!error) {
+                    console.log('File added:', file);
+                } else {
+                    console.error('Error adding file:', error);
+                }
+            });
 
 
-  </script>
+    </script>
 
-
-
-    <!-- End custom js for this page -->
-  </body>
+    </body>
 </html>

@@ -4,6 +4,7 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Relations\HasMany;
 
 class VehicleType extends Model
 {
@@ -16,4 +17,9 @@ class VehicleType extends Model
     protected $guarded = ['id'];
 
     public $timestamps = true;
+
+
+    public function vehicles(): HasMany{
+        return $this->hasMany(Vehicle::class);
+    }
 }
