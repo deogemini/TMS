@@ -3,15 +3,22 @@
 <div class="main-panel">
     <div class="content-wrapper">
 <div class="col-lg-12 grid-margin stretch-card">
-<div class="modal fade" id="showModal" tabindex="-1" aria-labelledby="exampleModalLabel"
-        aria-hidden="true">
-        <div class="modal-dialog modal-dialog-centered">
-            <div class="modal-content">
-                <div class="modal-header bg-light p-3">
-                    <h5 class="modal-title" id="exampleModalLabel">Register Vehicle </h5>
-                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"
-                        id="close-modal"></button>
+    <div class="card">
+        <div class="card-header">
+            <div class="row align-items-center">
+                <div class="col">
+                    <h3 class="card-title">Vehicles List</h3>
                 </div>
+                <div class="col-auto">
+                        <a href="{{route('trucks.vehicles.index')}}" class="btn btn-primary">
+                            <i class="mdi mdi-chevron-left"></i> <!-- Assuming you want a left chevron icon -->
+                            Go back to List
+                        </a>
+                </div>
+            </div>
+        </div>
+
+
                 <div class="card-body form-steps">
                     <form id="registration_form" action="{{ route('trucks.create') }}" method="post">
                         @csrf
@@ -102,7 +109,6 @@
         </div>
     </div>
 
-    </div>
 </div>
 
 

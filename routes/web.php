@@ -22,5 +22,6 @@ Route::get('/', function () {
 Route::get('/trucks/index',[TruckController::class, 'index'])->name('trucks.index');
 Route::get('/trucks/vehicles/index',[TruckController::class, 'indexVehicles'])->name('trucks.vehicles.index');
 Route::post('/trucks/create',[TruckController::class, 'createVehicleType'])->name('trucks.create');
+Route::get('/trucks/vehicles/register',[TruckController::class, 'register'])->name('trucks.vehicles.register');
 Route::post('/trucks/upload',[TruckController::class, 'storeFile'])->name('trucks.upload');
 Route::get('/dashboard/index',[DashboardController::class, 'index'])->name('dashboard.index');

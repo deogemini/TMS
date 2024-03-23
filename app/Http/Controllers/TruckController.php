@@ -37,6 +37,12 @@ class TruckController extends Controller
 
         return redirect()->back();
     }
+    public function register(Request $request)
+    {
+        $cars = VehicleType::all();
+
+        return view('pages.register_vehicle',compact('cars'));
+    }
 
     public function storeFile(Request $request){
         if($request->hasFile('avatar')){

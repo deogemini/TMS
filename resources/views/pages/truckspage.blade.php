@@ -1,23 +1,24 @@
 @extends('welcome')
 @section('content')
-<di class="main-panel">
+<div class="main-panel">
     <div class="content-wrapper">
 <div class="col-lg-12 grid-margin stretch-card">
     <div class="card">
-        <div class="card">
             <div class="card-header">
-                <h3 class="card-title">Vehicles List</h3>
+                <div class="row align-items-center">
+                    <div class="col">
+                        <h3 class="card-title">Vehicles List</h3>
+                    </div>
+                    <div class="col-auto">
+                        <a href="{{ route('trucks.vehicles.register') }}" class="btn btn-primary">
+                                <i class="mdi mdi-plus  "></i> Add New Vehicle
+                        </a>
+                    </div>
+            </div>
+            </div>
 
-            </div>
-      <div class="card-body">
-        <div class="row">
-            <div class="col"></div>
-            <div class="col-auto">
-                            <button type="button" class="btn btn-success add-btn" data-bs-toggle="modal" data-bs-target="#showModal" >
-                                <i class="ri-add-line align-bottom me-1"></i> Add New Vehicle
-                            </button>
-            </div>
-        </div>
+
+        <div class="card-body">
 
         <table class="table table-striped">
           <thead>
@@ -56,9 +57,9 @@
             @endforeach
           </tbody>
         </table>
-      </div>
+        </div>
     </div>
-  </div>
+</div>
     </div>
 </div>
 
