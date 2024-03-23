@@ -55,10 +55,14 @@
                 <td>{{$car->status}}</td>
                 <td>
                     <!-- Add button with tooltip -->
+                    <a href="{{route('trucks.vehicles.advanceDetails')}}">
                     <span class="mdi mdi-plus-box" title="Add advance details"></span>
+                    </a>
 
                     <!-- Update button with tooltip -->
+                    <a href="/add-advance-details">
                     <span class="mdi mdi-pencil" title="Update vehicle details"></span>
+                    </a>
                 </td>
 
             </tr>
