@@ -113,6 +113,12 @@ class TruckController extends Controller
 
         return view('pages.register_advance_details_vehicle',compact('cars'));
     }
+    public function registerAdvanceDetailsforAll(Request $request)
+    {
+        $cars = Vehicle::all();
+
+        return view('pages.register_advance_details_vehicle_for_all',compact('cars'));
+    }
 
     /**
      * Display the specified resource.

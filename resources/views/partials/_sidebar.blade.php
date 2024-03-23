@@ -24,7 +24,6 @@
         <a class="nav-link" data-bs-toggle="collapse" href="#vehicle-pages" aria-expanded="false" aria-controls="vehicle-pages">
         <span class="menu-title">Vehicles Management</span>
         <i class="mdi mdi-truck menu-icon"></i>
-        <i class="menu-arrow"></i>
       </a>
 
       <div class="collapse" id="vehicle-pages">
@@ -35,6 +34,27 @@
         </li>
           <li class="nav-item"> <a class="nav-link {{ request()->routeIs('trucks.vehicles.index') ? 'active' : '' }}" href="{{ route('trucks.vehicles.index')}}"> <span class="menu-title"> Vehicles List</span>  </a></li>
           <li class="nav-item"> <a class="nav-link {{ request()->routeIs('trucks.vehicles.register') ? 'active' : '' }}" href="{{ route('trucks.vehicles.register')}}"> <span class="menu-title"> Register Vehicles</span>  </a></li>
+          <li class="nav-item"> <a class="nav-link {{ request()->routeIs('trucks.vehicles.advanceDetailsforAll') ? 'active' : '' }}" href="{{ route('trucks.vehicles.advanceDetailsforAll')}}"> <span class="menu-title"> Register Advance Details</span>  </a></li>
+
+        </ul>
+      </div>
+    </li>
+
+    <li class="nav-item">
+        <a class="nav-link" data-bs-toggle="collapse" href="#trip-pages" aria-expanded="false" aria-controls="trip-pages">
+        <span class="menu-title">Trip Management</span>
+        <i class="mdi mdi-truck menu-icon"></i>
+      </a>
+
+      <div class="collapse" id="trip-pages">
+        <ul class="nav flex-column sub-menu">
+          <li class="nav-item">
+            <a class="nav-link {{ request()->routeIs('trucks.index') ? 'active' : '' }}" href="{{ route('trucks.index')}}">
+                <span class="menu-title">Trip Entry</span></a>
+        </li>
+          <li class="nav-item"> <a class="nav-link {{ request()->routeIs('trucks.vehicles.index') ? 'active' : '' }}" href="{{ route('trucks.vehicles.index')}}"> <span class="menu-title"> Vehicles List</span>  </a></li>
+          <li class="nav-item"> <a class="nav-link {{ request()->routeIs('trucks.vehicles.register') ? 'active' : '' }}" href="{{ route('trucks.vehicles.register')}}"> <span class="menu-title"> Register Vehicles</span>  </a></li>
+          <li class="nav-item"> <a class="nav-link {{ request()->routeIs('trucks.vehicles.advanceDetailsforAll') ? 'active' : '' }}" href="{{ route('trucks.vehicles.advanceDetailsforAll')}}"> <span class="menu-title"> Register Advance Details</span>  </a></li>
 
         </ul>
       </div>
