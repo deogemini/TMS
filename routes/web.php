@@ -24,7 +24,9 @@ Route::get('/trucks/vehicles/index',[TruckController::class, 'indexVehicles'])->
 Route::post('/trucks/create',[TruckController::class, 'createVehicleType'])->name('trucks.create');
 Route::get('/trucks/vehicles/register',[TruckController::class, 'register'])->name('trucks.vehicles.register');
 Route::post('/trucks/vehicles/store',[TruckController::class, 'store'])->name('trucks.vehicles.store');
-Route::get('/trucks/vehicles/advanceDetails',[TruckController::class, 'registerAdvanceDetails'])->name('trucks.vehicles.advanceDetails');
+Route::get('/trucks/vehicles/advanceDetails/{id}',[TruckController::class, 'routetoAdvanceDetails'])->name('trucks.vehicles.advanceDetails');
+Route::get('/trucks/vehicles/info/{id}',[TruckController::class, 'routetoVehicleDetails'])->name('trucks.vehicles.info');
+Route::post('/trucks/vehicles/advanceDetailsStore',[TruckController::class, 'registerAdvanceDetails'])->name('trucks.vehicles.advanceDetailsStore');
 Route::get('/trucks/vehicles/advanceDetailsforAll',[TruckController::class, 'registerAdvanceDetailsforAll'])->name('trucks.vehicles.advanceDetailsforAll');
 Route::post('/trucks/upload',[TruckController::class, 'storeFile']);
 Route::get('/dashboard/index',[DashboardController::class, 'index'])->name('dashboard.index');

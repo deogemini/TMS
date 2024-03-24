@@ -8,7 +8,7 @@
             <div class="row align-items-center">
                 <div class="col">
                     <h3 class="card-title">
-                        Vehicles Advance Details Registration for
+                        Vehicles Details for
                         <span style="font-weight: bold; font-size: 1.2em; color: #333;">
                             {{ $cartoadddetails->vehicle_name }}
                         </span>
@@ -21,6 +21,13 @@
                             Go back to List
                         </a>
                 </div>
+
+                <div class="col-auto">
+                    <a href="{{route('trucks.vehicles.index')}}" class="btn btn-secondary">
+                        <i class="mdi mdi-download"></i> <!-- Assuming you want a left chevron icon -->
+                        Download PDF
+                    </a>
+            </div>
             </div>
         </div>
 

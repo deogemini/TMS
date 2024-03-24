@@ -32,7 +32,7 @@
               <th> Chasis number</th>
               <th> Year of Manufacture</th>
               <th> Fuel Type</th>
-              <th> Vehicle Image</th>
+              {{-- <th> Vehicle Image</th> --}}
               <th> Kilometers</th>
               <th> Status</th>
               <th>Actions</th>
@@ -50,18 +50,21 @@
                 <td>{{$car->chasis_number}}</td>
                 <td>{{$car->year_manufacture}}</td>
                 <td>{{$car->fuel_type}}</td>
-                <td>''</td>
+                {{-- <td>''</td> --}}
                 <td>{{$car->kilometres}}</td>
                 <td>{{$car->status}}</td>
                 <td>
                     <!-- Add button with tooltip -->
-                    <a href="{{route('trucks.vehicles.advanceDetails')}}">
+                    <a href="{{route('trucks.vehicles.advanceDetails',['id'=>$car->id])}}">
                     <span class="mdi mdi-plus-box" title="Add advance details"></span>
                     </a>
 
                     <!-- Update button with tooltip -->
                     <a href="/add-advance-details">
                     <span class="mdi mdi-pencil" title="Update vehicle details"></span>
+                    </a>
+                    <a href="{{route('trucks.vehicles.info',['id'=>$car->id])}}">
+                    <span class="mdi mdi-file-document-edit" title="View vehicle details"></span>
                     </a>
                 </td>
 

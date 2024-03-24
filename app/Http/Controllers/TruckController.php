@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\TemporaryFile;
 use App\Models\Vehicle;
+use App\Models\VehicleAdvanceDetails;
 use App\Models\VehicleType;
 use Illuminate\Http\Request;
 use Spatie\MediaLibrary\HasMedia\HasMedia;
@@ -107,11 +108,35 @@ class TruckController extends Controller
 
     }
 
+    public function routetoAdvanceDetails($id)
+    {
+        $cartoadddetails = Vehicle::where('id',$id)->first();
+
+        return view('pages.register_advance_details_vehicle',compact('cartoadddetails'));
+    }
+    public function routetoVehicleDetails($id)
+    {
+        $cartoadddetails = Vehicle::where('id',$id)->first();
+
+        return view('pages.trucksinfo',compact('cartoadddetails'));
+    }
     public function registerAdvanceDetails(Request $request)
     {
+        $vehicle_id = Vehicle::where('id', $request->car_id)->first();
+        $vehicleAdvanceDetails = new VehicleAdvanceDetails();
+        $vehicleAdvanceDetails->car_id = $request->car_id;
+        $vehicleAdvanceDetails->insurance_number = $request->insurance_number;
+        $vehicleAdvanceDetails->insurance_start_date = $request->insurance_start_date;
+        $vehicleAdvanceDetails->insurance_end_date = $request->insurance_end_date;
+        $vehicleAdvanceDetails->LATRA = $request->LATRA;
+        $vehicleAdvanceDetails->road_licence = $request->road_licence;
+
+        $vehicleAdvanceDetails->save();
+
+        $car_types = VehicleType::all();
         $cars = Vehicle::all();
 
-        return view('pages.register_advance_details_vehicle',compact('cars'));
+        return view('pages.truckspage',compact('cars', 'car_types'));
     }
     public function registerAdvanceDetailsforAll(Request $request)
     {
