@@ -24,6 +24,7 @@ return new class extends Migration
             $table->unsignedBigInteger('role_id');
             $table->string('license_number');
             $table->string('license_class');
+            $table->string('status');
             $table->timestamps();
 
             $table->foreign('role_id')->references('id')->on('roles');

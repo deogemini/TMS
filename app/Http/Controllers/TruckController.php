@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Drivers;
 use App\Models\TemporaryFile;
 use App\Models\Vehicle;
 use App\Models\VehicleAdvanceDetails;
@@ -23,6 +24,12 @@ class TruckController extends Controller
        return view('pages.vehicleType', compact('cars'));
     }
 
+    public function indexDrivers()
+    {
+
+       $drivers = Drivers::all();
+       return view('pages.driverspage', compact('drivers'));
+    }
     public function indexVehicles()
     {
 
@@ -49,6 +56,12 @@ class TruckController extends Controller
         $cars = VehicleType::all();
 
         return view('pages.register_vehicle',compact('cars'));
+    }
+    public function driverRoute(Request $request)
+    {
+
+
+        return view('pages.register_driver');
     }
 
     public function storeFile(Request $request){

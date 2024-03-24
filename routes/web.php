@@ -23,6 +23,13 @@ Route::get('/trucks/index',[TruckController::class, 'index'])->name('trucks.inde
 Route::get('/trucks/vehicles/index',[TruckController::class, 'indexVehicles'])->name('trucks.vehicles.index');
 Route::post('/trucks/create',[TruckController::class, 'createVehicleType'])->name('trucks.create');
 Route::get('/trucks/vehicles/register',[TruckController::class, 'register'])->name('trucks.vehicles.register');
+
+
+
+Route::get('/trucks/driver/register',[TruckController::class, 'driverRoute'])->name('trucks.driver.register');
+Route::get('/users/driver/index',[TruckController::class, 'indexDrivers'])->name('users.driver.index');
+Route::get('/users/driver/add',[TruckController::class, 'driverRoute'])->name('users.driver.add');
+
 Route::post('/trucks/vehicles/store',[TruckController::class, 'store'])->name('trucks.vehicles.store');
 Route::get('/trucks/vehicles/advanceDetails/{id}',[TruckController::class, 'routetoAdvanceDetails'])->name('trucks.vehicles.advanceDetails');
 Route::get('/trucks/vehicles/info/{id}',[TruckController::class, 'routetoVehicleDetails'])->name('trucks.vehicles.info');

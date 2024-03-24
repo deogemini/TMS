@@ -69,12 +69,32 @@
       <div class="collapse" id="trip-pages">
         <ul class="nav flex-column sub-menu">
           <li class="nav-item">
-            <a class="nav-link {{ request()->routeIs('trucks.index') ? 'active' : '' }}" href="{{ route('trucks.index')}}">
+            <a class="nav-link {{ request()->routeIs('users.driver.add') ? 'active' : '' }}" href="{{ route('users.driver.add')}}">
                 <span class="menu-title">Add Drivers</span></a>
         </li>
-          <li class="nav-item"> <a class="nav-link {{ request()->routeIs('trucks.vehicles.index') ? 'active' : '' }}" href="{{ route('trucks.vehicles.index')}}"> <span class="menu-title"> Driver List</span>  </a></li>
-          <li class="nav-item"> <a class="nav-link {{ request()->routeIs('trucks.vehicles.register') ? 'active' : '' }}" href="{{ route('trucks.vehicles.register')}}"> <span class="menu-title"> Add Vendors</span>  </a></li>
-          <li class="nav-item"> <a class="nav-link {{ request()->routeIs('trucks.vehicles.advanceDetailsforAll') ? 'active' : '' }}" href="{{ route('trucks.vehicles.advanceDetailsforAll')}}"> <span class="menu-title"> Vendor List</span>  </a></li>
+          <li class="nav-item"> <a class="nav-link {{ request()->routeIs('users.driver.index') ? 'active' : '' }}" href="{{ route('users.driver.index')}}"> <span class="menu-title"> Driver List</span>  </a></li>
+          {{-- <li class="nav-item"> <a class="nav-link {{ request()->routeIs('') ? 'active' : '' }}" href="{{ route('')}}"> <span class="menu-title"> Add Vendors</span>  </a></li> --}}
+          {{-- <li class="nav-item"> <a class="nav-link {{ request()->routeIs('') ? 'active' : '' }}" href="{{ route('')}}"> <span class="menu-title"> Vendor List</span>  </a></li> --}}
+
+        </ul>
+      </div>
+    </li>
+
+
+    <li class="nav-item">
+        <a class="nav-link" data-bs-toggle="collapse" href="#settings-pages" aria-expanded="false" aria-controls="settings-pages">
+        <span class="menu-title">System Settings</span>
+        <span class="mdi mdi-cog menu-icon"></span>
+    </a>
+
+      <div class="collapse" id="settings-pages">
+        <ul class="nav flex-column sub-menu">
+          <li class="nav-item">
+            <a class="nav-link {{ request()->routeIs('trucks.index') ? 'active' : '' }}" href="{{ route('trucks.index')}}">
+                <span class="menu-title">Roles Entry </span></a>
+        </li>
+          <li class="nav-item"> <a class="nav-link {{ request()->routeIs('trucks.vehicles.index') ? 'active' : '' }}" href="{{ route('trucks.vehicles.index')}}"> <span class="menu-title"> Role List</span>  </a></li>
+          <li class="nav-item"> <a class="nav-link {{ request()->routeIs('trucks.vehicles.register') ? 'active' : '' }}" href="{{ route('trucks.vehicles.register')}}"> <span class="menu-title"> Licence Classes</span>  </a></li>
 
         </ul>
       </div>
