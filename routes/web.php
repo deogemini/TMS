@@ -27,6 +27,7 @@ Route::get('/trucks/vehicles/register',[TruckController::class, 'register'])->na
 
 
 Route::get('/trucks/driver/register',[TruckController::class, 'driverRoute'])->name('trucks.driver.register');
+Route::post('/trucks/driver/store',[TruckController::class, 'driverStore'])->name('trucks.driver.store');
 Route::get('/users/driver/index',[TruckController::class, 'indexDrivers'])->name('users.driver.index');
 Route::get('/users/driver/add',[TruckController::class, 'driverRoute'])->name('users.driver.add');
 

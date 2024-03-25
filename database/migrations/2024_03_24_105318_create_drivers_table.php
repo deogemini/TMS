@@ -16,18 +16,15 @@ return new class extends Migration
             $table->string('first_name');
             $table->string('last_name');
             $table->date('date_of_birth');
-            $table->string('email');
+            $table->string('email')->nullable();
             $table->string('phone_number');
-            $table->string('address');
-            $table->string('region');
-            $table->string('country');
-            $table->unsignedBigInteger('role_id');
+            $table->string('address')->nullable();
+            $table->string('region')->nullable();
+            $table->string('country')->nullable();
             $table->string('license_number');
             $table->string('license_class');
-            $table->string('status');
+            $table->string('status')->default('active');
             $table->timestamps();
-
-            $table->foreign('role_id')->references('id')->on('roles');
 
         });
     }

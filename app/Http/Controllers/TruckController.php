@@ -63,6 +63,25 @@ class TruckController extends Controller
 
         return view('pages.register_driver');
     }
+    public function driverStore(Request $request)
+    {
+        $driver = new Drivers();
+        $driver->first_name = $request->first_name;
+        $driver->last_name = $request->last_name;
+        $driver->date_of_birth = $request->date_of_birth;
+        $driver->email = $request->email;
+        $driver->phone_number = $request->phone_number;
+        $driver->address = $request->address;
+        $driver->region = $request->region;
+        $driver->country = $request->country;
+        $driver->license_number = $request->license_number;
+        $driver->license_class = $request->license_class;
+        $driver->save();
+
+
+        $drivers = Drivers::all();
+       return view('pages.driverspage', compact('drivers'));
+    }
 
     public function storeFile(Request $request){
         if($request->hasFile('avatar')){

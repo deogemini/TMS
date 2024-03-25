@@ -20,79 +20,95 @@
 
 
                 <div class="card-body form-steps">
-                    <form id="registration_form" action="{{ route('trucks.vehicles.store') }}" method="post"  enctype="multipart/form-data">
+                    <form id="registration_form" action="{{ route('trucks.driver.store') }}" method="post"  enctype="multipart/form-data">
                         @csrf
-                        <div class="row">
                             <div class="row">
                                 <div class="col-md-6">
                                     <div class="mb-3">
-                                        <label class="form-label" for="description">Type Name</label>
-                                        <input type="text" class="form-control" name="make_model" placeholder="Enter Type name" required>
+                                        <label class="form-label" for="description">First Name</label>
+                                        <input type="text" class="form-control" name="first_name" placeholder="Enter First name" required>
 
                                     </div>
                                 </div>
                                 <div class="col-md-6">
                                     <div class="mb-3">
-                                        <label class="form-label" for="description">Vehicle Name</label>
-                                        <input type="text" class="form-control" name="vehicle_name" placeholder="Enter Type name" required>
+                                        <label class="form-label" for="description">Last Name</label>
+                                        <input type="text" class="form-control" name="last_name" placeholder="Enter Last name" required>
                                     </div>
                                 </div>
                             </div>
                             <div class="row">
                                 <div class="col-md-6">
                                     <div class="mb-3">
-                                        <label class="form-label" for="description">Make/Model</label>
-                                        <input type="text" class="form-control" name="make_model" placeholder="Enter Type name" required>
+                                        <label class="form-label" for="description">Date of Birth</label>
+                                        <input type="date" class="form-control" name="date_of_birth" required>
                                     </div>
-                                </div></div>
+                                </div>
                                 <div class="col-md-6">
                                     <div class="mb-3">
-                                        <label class="form-label" for="description">Registration Number</label>
-                                        <input type="text" class="form-control" name="registration_number" placeholder="Enter Type name" required>
+                                        <label class="form-label" for="description">Email</label>
+                                        <input type="email" class="form-control" name="email" placeholder="Enter email">
                                     </div>
                                 </div>
                             </div>
                             <div class="row">
                                 <div class="col-md-4">
                                     <div class="mb-3">
-                                        <label class="form-label" for="description">Engine Number</label>
-                                        <input type="text" class="form-control" name="engine_number" placeholder="Enter Type name" required>
+                                        <label class="form-label" for="phone_number">Phone Number</label>
+                                        <input type="phone_number" class="form-control" name="phone_number" placeholder="Enter phone number" required>
                                     </div>
                                 </div>
                                 <div class="col-md-4">
                                     <div class="mb-3">
-                                        <label class="form-label" for="description">Chasis Number</label>
-                                        <input type="text" class="form-control" name="chasis_number" placeholder="Enter Type name" required>
+                                        <label class="form-label" for="description">Location Address</label>
+                                        <input type="text" class="form-control" name="address" placeholder="Enter Address" >
                                     </div>
                                 </div>
                                 <div class="col-md-4">
                                     <div class="mb-3">
-                                        <label class="form-label" for="description">Year of Manufacture</label>
-                                        <select name="year_manufacture"   class="form-select">
-                                            <option value="" selected>Please Select Year</option>
-                                            <option value="2000">2000</option>
-                                            <option value="2001">2001</option>
+                                        <label class="form-label" for="description">Location Region</label>
+                                        <select name="region"  id="region" class="form-select">
+                                            <option value="" selected>Please  Region</option>
+                                                <option value="Dar es Salaam">Dar es Salaam</option>
+                                                <option value="Arusha">Arusha</option>
+                                                <option value="Kilimanjaro">Kilimanjaro</option>
+                                                <option value="Tanga">Tanga</option>
+                                                <option value="Dodoma">Dodoma</option>
+                                        </select>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-4">
+                                    <div class="mb-3">
+                                        <label class="form-label" for="description">Location Counry</label>
+                                        <select name="country"  id="country" class="form-select">
+                                            <option value="" selected>Please  Country</option>
+                                                <option value="Tanzania">Tanzania</option>
+                                                <option value="DRCongo">DRC CONGO</option>
+                                                <option value="Uganda">Uganda</option>
+                                                <option value="Kenya">Kenya</option>
+                                                <option value="Zambia">Zambia</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="col-md-4">
+                                    <div class="mb-3">
+                                        <label class="form-label" for="description">License Number</label>
+                                        <input type="text" class="form-control" name="license_number" placeholder="Enter License Number" required>
+                                    </div>
+                                </div>
+                                <div class="col-md-4">
+                                        <label class="form-label" for="description">License Class</label>
+                                        <select name="license_class"  id="license_class" class="form-select">
+                                            <option value="" selected>Please Select Class</option>
+                                                <option value="A">A</option>
+                                                <option value="C">C</option>
+                                                <option value="B">B</option>
                                         </select>
                                     </div>
                                 </div>
 
-                            </div>
-
-                            <div class="mb-3">
-                                <label class="form-label" for="description">Fuel Type</label>
-                                <select name="fuel_type"  class="form-select">
-                                    <option value="" selected>Please Select Type</option>
-                                    <option value="petrol">Petrol</option>
-                                    <option value="disel">Disel</option>
-                                </select>
-                            </div>
-                            <div class="mb-3">
-                                <label class="form-label" for="description">Vehicle Images</label>
-                                <input type="file" class="form-control" name="avatar" id="avatar">
-                            </div>
-                            <div class="mb-3">
-                                <label class="form-label" for="description">Kilometers</label>
-                                <input type="number" class="form-control" name="kilometres" placeholder="Enter Type name" required>
                             </div>
                             <p style="margin-top: 15px;"><b>NOTE: Fields marked with <span id="required-field">*</span> are mandatory</b></p>
                             <div class="d-flex align-items-start gap-3 mt-4">
