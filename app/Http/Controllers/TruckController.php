@@ -59,9 +59,13 @@ class TruckController extends Controller
     }
     public function driverRoute(Request $request)
     {
-
-
         return view('pages.register_driver');
+    }
+    public function driverInfo($id)
+    {
+        $driver = Drivers::where('id', $id)->first();
+
+        return view('pages.driver_info', compact('driver'));
     }
     public function driverStore(Request $request)
     {

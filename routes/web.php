@@ -30,6 +30,7 @@ Route::get('/trucks/driver/register',[TruckController::class, 'driverRoute'])->n
 Route::post('/trucks/driver/store',[TruckController::class, 'driverStore'])->name('trucks.driver.store');
 Route::get('/users/driver/index',[TruckController::class, 'indexDrivers'])->name('users.driver.index');
 Route::get('/users/driver/add',[TruckController::class, 'driverRoute'])->name('users.driver.add');
+Route::get('/trucks/drivers/info/{id}',[TruckController::class, 'driverInfo'])->name('trucks.drivers.info');
 
 Route::post('/trucks/vehicles/store',[TruckController::class, 'store'])->name('trucks.vehicles.store');
 Route::get('/trucks/vehicles/advanceDetails/{id}',[TruckController::class, 'routetoAdvanceDetails'])->name('trucks.vehicles.advanceDetails');

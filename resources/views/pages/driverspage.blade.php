@@ -46,7 +46,7 @@
                 <td>{{$driver->email}}</td>
                 <td>{{$driver->phone_number}}</td>
                 <td>{{$driver->address}}</td>
-                <td>{{$driver->regiion}}</td>
+                <td>{{$driver->region}}</td>
                 <td>{{$driver->country}}</td>
                 <td>{{$driver->license_number}}</td>
                 <td>{{$driver->license_class}}</td>
@@ -57,7 +57,7 @@
                     <a href="/add-advance-details">
                     <span class="mdi mdi-pencil" title="Update Driver details"></span>
                     </a>
-                    <a href="{{route('trucks.vehicles.info',['id'=>$driver->id])}}">
+                    <a href="{{route('trucks.drivers.info',['id'=>$driver->id])}}">
                     <span class="mdi mdi-file-document-edit" title="View Driver details"></span>
                     </a>
                 </td>
