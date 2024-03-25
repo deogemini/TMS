@@ -39,3 +39,4 @@ Route::post('/trucks/vehicles/advanceDetailsStore',[TruckController::class, 'reg
 Route::get('/trucks/vehicles/advanceDetailsforAll',[TruckController::class, 'registerAdvanceDetailsforAll'])->name('trucks.vehicles.advanceDetailsforAll');
 Route::post('/trucks/upload',[TruckController::class, 'storeFile']);
 Route::get('/dashboard/index',[DashboardController::class, 'index'])->name('dashboard.index');
+Route::get('/trip/index',[TruckController::class, 'indexTrip'])->name('trip.index');

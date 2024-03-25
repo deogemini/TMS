@@ -49,12 +49,11 @@
       <div class="collapse" id="trip-pages">
         <ul class="nav flex-column sub-menu">
           <li class="nav-item">
-            <a class="nav-link {{ request()->routeIs('trucks.index') ? 'active' : '' }}" href="{{ route('trucks.index')}}">
+            <a class="nav-link {{ request()->routeIs('trip.index') ? 'active' : '' }}" href="{{ route('trip.index')}}">
                 <span class="menu-title">Trip Entry</span></a>
         </li>
-          <li class="nav-item"> <a class="nav-link {{ request()->routeIs('trucks.vehicles.index') ? 'active' : '' }}" href="{{ route('trucks.vehicles.index')}}"> <span class="menu-title"> Vehicles List</span>  </a></li>
-          <li class="nav-item"> <a class="nav-link {{ request()->routeIs('trucks.vehicles.register') ? 'active' : '' }}" href="{{ route('trucks.vehicles.register')}}"> <span class="menu-title"> Register Vehicles</span>  </a></li>
-          <li class="nav-item"> <a class="nav-link {{ request()->routeIs('trucks.vehicles.advanceDetailsforAll') ? 'active' : '' }}" href="{{ route('trucks.vehicles.advanceDetailsforAll')}}"> <span class="menu-title"> Register Advance Details</span>  </a></li>
+          <li class="nav-item"> <a class="nav-link {{ request()->routeIs('trucks.vehicles.index') ? 'active' : '' }}" href="{{ route('trucks.vehicles.index')}}"> <span class="menu-title"> All Trip</span>  </a></li>
+          <li class="nav-item"> <a class="nav-link {{ request()->routeIs('trucks.vehicles.register') ? 'active' : '' }}" href="{{ route('trucks.vehicles.register')}}"> <span class="menu-title"> Ledgers</span>  </a></li>
 
         </ul>
       </div>

@@ -23,6 +23,12 @@ class TruckController extends Controller
         $cars = VehicleType::all();
        return view('pages.vehicleType', compact('cars'));
     }
+    public function indexTrip()
+    {
+        $drivers = Drivers::all();
+        $trucks = Vehicle::all();
+       return view('pages.tripentry', compact('drivers', 'trucks'));
+    }
 
     public function indexDrivers()
     {
