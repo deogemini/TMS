@@ -16,7 +16,7 @@
 
                                     </div>
                 <div class="col-auto">
-                        <a href="{{route('trucks.vehicles.index')}}" class="btn btn-primary">
+                        <a href="{{route('users.driver.index')}}" class="btn btn-primary">
                             <i class="mdi mdi-chevron-left"></i> <!-- Assuming you want a left chevron icon -->
                             Go back to List
                         </a>
