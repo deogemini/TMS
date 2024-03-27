@@ -17,12 +17,9 @@
                 </div>
             </div>
         </div>
-
-
                 <div class="card-body form-steps">
                     <form id="registration_form" action="{{ route('trucks.vehicles.store') }}" method="post"  enctype="multipart/form-data">
                         @csrf
-                        <div class="row">
                             <div class="row">
                                 <div class="col-md-6">
                                     <div class="mb-3">
@@ -48,7 +45,7 @@
                                         <label class="form-label" for="description">Make/Model</label>
                                         <input type="text" class="form-control" name="make_model" placeholder="Enter Type name" required>
                                     </div>
-                                </div></div>
+                                </div>
                                 <div class="col-md-6">
                                     <div class="mb-3">
                                         <label class="form-label" for="description">Registration Number</label>
@@ -82,22 +79,38 @@
 
                             </div>
 
-                            <div class="mb-3">
-                                <label class="form-label" for="description">Fuel Type</label>
-                                <select name="fuel_type"  class="form-select">
-                                    <option value="" selected>Please Select Type</option>
-                                    <option value="petrol">Petrol</option>
-                                    <option value="disel">Disel</option>
-                                </select>
+
+                            <div class="row">
+                                <div class="col-md-6">
+                                <div class="mb-3">
+                                    <label class="form-label" for="description">Fuel Type</label>
+                                    <select name="fuel_type"  class="form-select">
+                                        <option value="" selected>Please Select Type</option>
+                                        <option value="petrol">Petrol</option>
+                                        <option value="disel">Disel</option>
+                                        <option value="hybridpetrol">Hybrid Petrol</option>
+                                        <option value="lpg">LPG</option>
+                                        <option value="electrical">Electrical</option>
+                                        <option value="cng">CNG</option>
+                                    </select>
+                                </div>
+                                </div>
+                                <div class="col-md-6">
+                                <div class="mb-3">
+                                    <label class="form-label" for="description">Kilometers</label>
+                                    <input type="number" class="form-control" name="kilometres" placeholder="Enter Type name" required>
+                                </div>
+                                </div>
                             </div>
-                            <div class="mb-3">
-                                <label class="form-label" for="description">Vehicle Images</label>
-                                <input type="file" class="form-control" name="avatar" id="avatar">
+
+                            <div class="row">
+                                <div class="mb-3">
+                                    <label class="form-label" for="description">Vehicle Images</label>
+                                    <input type="file" class="form-control" name="avatar" id="avatar">
+                                </div>
                             </div>
-                            <div class="mb-3">
-                                <label class="form-label" for="description">Kilometers</label>
-                                <input type="number" class="form-control" name="kilometres" placeholder="Enter Type name" required>
-                            </div>
+
+
                             <p style="margin-top: 15px;"><b>NOTE: Fields marked with <span id="required-field">*</span> are mandatory</b></p>
                             <div class="d-flex align-items-start gap-3 mt-4">
                                 <button type="submit" class="btn btn-success btn-label right ms-auto">Submit</button>
