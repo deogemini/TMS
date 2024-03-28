@@ -53,11 +53,9 @@
                                         <label class="form-label" for="description">Truck</label>
                                         <select name="region"  id="region" class="form-select">
                                             <option value="" selected>Please  Select Truck</option>
-                                                <option value="Dar es Salaam">Dar es Salaam</option>
-                                                <option value="Arusha">Arusha</option>
-                                                <option value="Kilimanjaro">Kilimanjaro</option>
-                                                <option value="Tanga">Tanga</option>
-                                                <option value="Dodoma">Dodoma</option>
+                                            @foreach ($trucks as $truck )
+                                            <option value="{{$truck->id}}">{{$truck->vehicle_name}}</option>
+                                            @endforeach
                                         </select>
                                     </div>
                                 </div>
@@ -66,11 +64,9 @@
                                         <label class="form-label" for="description">Driver</label>
                                         <select name="region"  id="region" class="form-select">
                                             <option value="" selected>Please  Select Driver</option>
-                                                <option value="Dar es Salaam">Dar es Salaam</option>
-                                                <option value="Arusha">Arusha</option>
-                                                <option value="Kilimanjaro">Kilimanjaro</option>
-                                                <option value="Tanga">Tanga</option>
-                                                <option value="Dodoma">Dodoma</option>
+                                            @foreach ($drivers as $driver )
+                                            <option value="{{$driver->id}}">{{$driver->first_name .' '. $driver->last_name}}</option>
+                                            @endforeach
                                         </select>
                                     </div>
                                 </div>
