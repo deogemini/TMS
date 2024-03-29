@@ -2,8 +2,10 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Customer;
 use App\Models\Drivers;
 use App\Models\TemporaryFile;
+use App\Models\TripEntry;
 use App\Models\Vehicle;
 use App\Models\VehicleAdvanceDetails;
 use App\Models\VehicleType;
@@ -27,7 +29,33 @@ class TruckController extends Controller
     {
         $drivers = Drivers::all();
         $trucks = Vehicle::all();
-       return view('pages.tripentry', compact('drivers', 'trucks'));
+        $customers = Customer::all();
+       return view('pages.tripentry', compact('drivers', 'trucks','customers'));
+    }
+
+    public function tripEntry(Request $request){
+
+        $newTrip = new TripEntry();
+        $newTrip->driver_id = $request->driver_id;
+        $newTrip->truck_id = $request->truck_id;
+        $newTrip->trip_number = $request->trip_number;
+        $newTrip->date_trip = $request->date_trip;
+        $newTrip->start_location = $request->start_location;
+        $newTrip->destination_location = $request->destination_location;
+        $newTrip->weight_in_tons = $request->weight_in_tons;
+        $newTrip->package_amount = $request->package_amount;
+        $newTrip->status_pay = $request->status_pay;
+        $newTrip->item_name = $request->item_name;
+        $newTrip->remarks = $request->remarks;
+        $newTrip->amount_to_pay = $request->amount_to_pay;
+        $newTrip->save();
+
+
+        $drivers = Drivers::all();
+        $trucks = Vehicle::all();
+        $customers = Customer::all();
+        return view('pages.tripentry', compact('drivers', 'trucks','customers'));
+
     }
 
     public function indexDrivers()
@@ -67,6 +95,15 @@ class TruckController extends Controller
     {
         return view('pages.register_driver');
     }
+    public function customerRoute(Request $request)
+    {
+        $customers = new Customer();
+        return view('pages.customer',compact('customers'));
+    }
+    public function customerRegisterRoute(Request $request)
+    {
+        return view('pages.customer_register');
+    }
     public function driverInfo($id)
     {
         $driver = Drivers::where('id', $id)->first();
@@ -91,6 +128,19 @@ class TruckController extends Controller
 
         $drivers = Drivers::all();
        return view('pages.driverspage', compact('drivers'));
+    }
+    public function customerStore(Request $request)
+    {
+        $customer = new Customer();
+        $customer->full_name = $request->full_name;
+        $customer->email = $request->email;
+        $customer->phone_number = $request->phone_number;
+        $customer->address = $request->address;
+        $customer->save();
+
+
+        $customers = new Customer();
+        return view('pages.customer',compact('customers'));
     }
 
     public function storeFile(Request $request){

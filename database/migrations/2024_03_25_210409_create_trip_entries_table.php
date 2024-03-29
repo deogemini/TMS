@@ -17,18 +17,20 @@ return new class extends Migration
             $table->unsignedBigInteger('driver_id');
             $table->integer('trip_number');
             $table->date('date_trip');
-            $table->string('from');
-            $table->string('to');
+            $table->string('start_location');
+            $table->string('destination_location');
             $table->string('weight_in_tons')->nullable();
             $table->string('package_amount')->nullable();
             $table->string('status_pay');
             $table->string('item_name');
             $table->string('remarks');
             $table->string('amount_to_pay');
+            $table->unsignedBigInteger('customer_id');
             $table->timestamps();
 
             $table->foreign('truck_id')->references('id')->on('vehicles');
             $table->foreign('driver_id')->references('id')->on('drivers');
+            $table->foreign('customer_id')->references('id')->on('customers');
 
         });
     }
