@@ -30,7 +30,7 @@
 
 
                 <div class="card-body form-steps">
-                    <form id="registration_form" action="{{ route('trucks.vehicles.advanceDetailsStore') }}" method="post"  enctype="multipart/form-data">
+                    <form id="registration_form" action="{{ route('trip.registration') }}" method="post"  enctype="multipart/form-data">
                         @csrf
                         <div class="row">
                             <div class="row">
@@ -48,10 +48,10 @@
                                 </div>
                             </div>
                             <div class="row">
-                                <div class="col-md-6">
+                                <div class="col-md-4">
                                     <div class="mb-3">
                                         <label class="form-label" for="description">Truck</label>
-                                        <select name="region"  id="region" class="form-select">
+                                        <select name="truck_id"  id="region" class="form-select">
                                             <option value="" selected>Please  Select Truck</option>
                                             @foreach ($trucks as $truck )
                                             <option value="{{$truck->id}}">{{$truck->vehicle_name}}</option>
@@ -59,13 +59,25 @@
                                         </select>
                                     </div>
                                 </div>
-                                <div class="col-md-6">
+                                <div class="col-md-4">
                                     <div class="mb-3">
                                         <label class="form-label" for="description">Driver</label>
-                                        <select name="region"  id="region" class="form-select">
+                                        <select name="driver_id"  id="region" class="form-select">
                                             <option value="" selected>Please  Select Driver</option>
                                             @foreach ($drivers as $driver )
                                             <option value="{{$driver->id}}">{{$driver->first_name .' '. $driver->last_name}}</option>
+                                            @endforeach
+                                        </select>
+                                    </div>
+                                </div>
+
+                                <div class="col-md-4">
+                                    <div class="mb-3">
+                                        <label class="form-label" for="description">Customer</label>
+                                        <select name="customer_id"  id="region" class="form-select">
+                                            <option value="" selected>Please  Select Customer</option>
+                                            @foreach ($customers as $customer )
+                                            <option value="{{$customer->id}}">{{$customer->full_name}}</option>
                                             @endforeach
                                         </select>
                                     </div>
@@ -75,13 +87,13 @@
                                 <div class="col-md-6">
                                     <div class="mb-3">
                                         <label class="form-label" for="description">Location Start</label>
-                                        <input type="text" class="form-control" name="from" placeholder="Enter Type name" required>
+                                        <input type="text" class="form-control" name="start_location" placeholder="Enter Type name" required>
                                     </div>
                                 </div>
                                 <div class="col-md-6">
                                     <div class="mb-3">
                                         <label class="form-label" for="description">Location Destination</label>
-                                        <input type="text" class="form-control" name="road_licence" placeholder="Enter Type name" required>
+                                        <input type="text" class="form-control" name="destination_location" placeholder="Enter Type name" required>
                                     </div>
                                 </div>
                             </div>
@@ -89,19 +101,19 @@
                                 <div class="col-md-4">
                                     <div class="mb-3">
                                         <label class="form-label" for="description">Item Name</label>
-                                        <input type="name" class="form-control" name="from" placeholder="Enter Type name">
+                                        <input type="name" class="form-control" name="item_name" placeholder="Enter Type name">
                                     </div>
                                 </div>
                                 <div class="col-md-4">
                                     <div class="mb-3">
                                         <label class="form-label" for="description">Weight in Tons</label>
-                                        <input type="number" class="form-control" name="from" placeholder="Enter Type name">
+                                        <input type="number" class="form-control" name="weight_in_tons" placeholder="Enter weight value">
                                     </div>
                                 </div>
                                 <div class="col-md-4">
                                     <div class="mb-3">
                                         <label class="form-label" for="description">Number of Packages</label>
-                                        <input type="number" class="form-control" name="road_licence" placeholder="Enter Type name">
+                                        <input type="number" class="form-control" name="package_amount" placeholder="Enter number of package">
                                     </div>
                                 </div>
                             </div>
@@ -110,7 +122,7 @@
                                 <div class="col-md-4">
                                     <div class="mb-3">
                                         <label class="form-label" for="description">Status On Pay</label>
-                                        <select name="region"  id="region" class="form-select">
+                                        <select name="status_pay"  id="region" class="form-select">
                                             <option value="" selected>Please select payment option</option>
                                                 <option value="Dar es Salaam">Full Paid</option>
                                                 <option value="Arusha">Partial Paid</option>
@@ -121,13 +133,13 @@
                                 <div class="col-md-4">
                                     <div class="mb-3">
                                         <label class="form-label" for="description">Remark</label>
-                                        <input type="number" class="form-control" name="road_licence" placeholder="Enter Type name">
+                                        <input type="text" class="form-control" name="remarks" placeholder="Enter Type name">
                                     </div>
                                 </div>
                                 <div class="col-md-4">
                                     <div class="mb-3">
                                         <label class="form-label" for="description">Amount to Pay in TZS</label>
-                                        <input type="number" class="form-control" name="road_licence" placeholder="Enter Type name">
+                                        <input type="number" class="form-control" name="amount_to_pay" placeholder="Enter Type name">
                                     </div>
                                 </div>
                             </div>

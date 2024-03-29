@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\DashboardController;
+use App\Http\Controllers\TripController;
 use App\Http\Controllers\TruckController;
 use Illuminate\Support\Facades\Route;
 
@@ -39,4 +40,14 @@ Route::post('/trucks/vehicles/advanceDetailsStore',[TruckController::class, 'reg
 Route::get('/trucks/vehicles/advanceDetailsforAll',[TruckController::class, 'registerAdvanceDetailsforAll'])->name('trucks.vehicles.advanceDetailsforAll');
 Route::post('/trucks/upload',[TruckController::class, 'storeFile']);
 Route::get('/dashboard/index',[DashboardController::class, 'index'])->name('dashboard.index');
+
+
 Route::get('/trip/index',[TruckController::class, 'indexTrip'])->name('trip.index');
+Route::post('/trip/entry',[TruckController::class, 'indexTrip'])->name('trip.entry');
+Route::post('/trip/registration',[TripController::class, 'store'])->name('trip.registration');
+
+
+//customers
+Route::get('/customer/index',[TruckController::class, 'customerRoute'])->name('customer.index');
+Route::get('/customer/registerpage',[TruckController::class, 'customerRegisterRoute'])->name('customer.registerpage');
+Route::post('/customer/store',[TruckController::class, 'customerStore'])->name('customer.store');

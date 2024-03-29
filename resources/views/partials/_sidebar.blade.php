@@ -72,6 +72,8 @@
                 <span class="menu-title">Add Drivers</span></a>
         </li>
           <li class="nav-item"> <a class="nav-link {{ request()->routeIs('users.driver.index') ? 'active' : '' }}" href="{{ route('users.driver.index')}}"> <span class="menu-title"> Driver List</span>  </a></li>
+          <li class="nav-item"> <a class="nav-link {{ request()->routeIs('customer.index') ? 'active' : '' }}" href="{{ route('customer.index')}}"> <span class="menu-title"> Customers List</span>  </a></li>
+          <li class="nav-item"> <a class="nav-link {{ request()->routeIs('customer.registerpage') ? 'active' : '' }}" href="{{ route('customer.registerpage')}}"> <span class="menu-title"> Add Customers</span>  </a></li>
           {{-- <li class="nav-item"> <a class="nav-link {{ request()->routeIs('') ? 'active' : '' }}" href="{{ route('')}}"> <span class="menu-title"> Add Vendors</span>  </a></li> --}}
           {{-- <li class="nav-item"> <a class="nav-link {{ request()->routeIs('') ? 'active' : '' }}" href="{{ route('')}}"> <span class="menu-title"> Vendor List</span>  </a></li> --}}
 
